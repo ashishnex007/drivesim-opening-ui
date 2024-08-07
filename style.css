@@ -1,0 +1,26 @@
+body{
+    font-family: poppins;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+}
+
+#leftScreen, #middleScreen, #rightScreen {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+#leftScreen {
+    background-color: #f0f0f0; /* Customize as needed */
+}
+
+#middleScreen {
+    background-color: #ffffff; /* Customize as needed */
+}
+
+#rightScreen {
+    background-color: #f0f0f0; /* Customize as needed */
+}
