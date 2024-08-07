@@ -1,3 +1,22 @@
+// Function to request full screen mode
+function requestFullScreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+        element.msRequestFullscreen();
+    }
+}
+
+// Initialize the full screen button
+document.getElementById('fullscreenButton').addEventListener('click', function() {
+    const body = document.body;
+    requestFullScreen(body);
+});
+
 function showFrame(frameId) {
     const frames = document.querySelectorAll('.frame');
     frames.forEach(frame => frame.style.display = 'none');
