@@ -8,52 +8,41 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
     </head>
-    <body>
-        <button id="fullscreenButton">Enter Full Screen</button>
-        <div id="leftScreen">
-            <!-- Content for the left screen (e.g., logo) -->
-            <img src="logo.png" alt="Logo" style="width: 100%; height: auto;">
-        </div>
-        
-        <div id="middleScreen">
-            <div id="app">
-                <h1 class="flex justify-center text-[40px] py-4 font-semibold">Mobility Driving Simulator</h1>
-    
-                <div id="landingFrame" class="flex justify-between h-[80vh] items-center frame">
-                    <div class="flex flex-col w-1/2 items-center gap-y-8">
-                        <button onclick="runPracticeCommand()" class="w-[10rem] bg-blue-500 text-lg hover:bg-blue-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Practice</button>
-                        <button onclick="showFrame('levelFrame')" class="w-[10rem] bg-blue-500 text-lg hover:bg-blue-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Play</button>
-                        <button onclick="showFrame('settingsFrame')" class="w-[10rem] bg-blue-500 text-lg hover:bg-blue-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Settings</button>
-                        <button onclick="closeApp()" class="w-[10rem] bg-red-500 text-lg hover:bg-red-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Exit</button>
-                    </div>
-                    <div>
-                        <img src="hero.png" class="h-[35rem] px-20" />
-                    </div>
-                </div>
-    
-                <div id="levelFrame" class="frame flex justify-between h-[80vh] items-center">
-                    <div class="flex flex-col w-1/2 items-center gap-y-8">
-                        <button onclick="openScenesPage('Easy')" class="w-[10rem] bg-green-500 text-lg hover:bg-green-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Easy</button>
-                        <button onclick="openScenesPage('Intermediate')" class="w-[10rem] bg-orange-500 text-lg hover:bg-orange-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Intermediate</button>
-                        <button onclick="openScenesPage('Hard')" class="w-[10rem] bg-red-500 text-lg hover:bg-red-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Hard</button>
-                        <button onclick="showFrame('landingFrame')" class="w-[10rem] bg-blue-500 text-lg hover:bg-blue-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Back</button>
-                    </div>
-                    <div>
-                        <img src="hero.png" class="h-[35rem] px-20" />
-                    </div>
-                </div>
-    
-                <div id="scenesFrame" class="frame flex justify-between h-[80vh] items-center"></div>
-                <div id="townFrame" class="frame flex justify-between h-[80vh] items-center"></div>
-                <div id="settingsFrame" class="frame"></div>
-            </div>
-        </div>
+    <body>        
+        <div id="app">
+            <h1 class="flex justify-center text-[40px] py-4 font-semibold text-[#F9AF06]">MOBILITY DRIVING SIMULATOR</h1>
 
-        <div id="rightScreen">
-            <!-- Content for the right screen (e.g., detailed info) -->
-            <div id="rightContent">
-                <!-- Dynamic content goes here -->
+            <div id="landingFrame" class="flex justify-between h-[80vh] items-center frame">
+                <div class="flex flex-col w-1/2 items-center gap-y-8">
+                    <button onclick="runPracticeCommand()" class="w-[10rem] bg-[#fbfbfb] text-lg text-[#2F5479] hover:bg-[#F9AF06] hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl hover:text-[#fbfbfb] font-bold py-4 px-4 rounded transition-all">PRACTICE</button>
+                    <button onclick="showFrame('levelFrame')" class="w-[10rem] bg-blue-500 text-lg hover:bg-blue-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">PLAY</button>
+                    <button onclick="showFrame('settingsFrame')" class="w-[10rem] bg-blue-500 text-lg hover:bg-blue-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">SETTINGS</button>
+                    <button onclick="closeApp()" class="w-[10rem] bg-red-500 text-lg hover:bg-red-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">EXIT</button>
+                </div>
+                <div>
+                    <img src="hero.png" class="h-[35rem] px-20" />
+                </div>
             </div>
+
+            <div id="levelFrame" class="frame flex justify-between h-[80vh] items-center">
+                <div class="flex flex-col w-1/2 items-center gap-y-8">
+                    <button onclick="openScenesPage('Easy')" class="w-[10rem] bg-green-500 text-lg hover:bg-green-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Easy</button>
+                    <button onclick="openScenesPage('Intermediate')" class="w-[10rem] bg-orange-500 text-lg hover:bg-orange-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Intermediate</button>
+                    <button onclick="openScenesPage('Hard')" class="w-[10rem] bg-red-500 text-lg hover:bg-red-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Hard</button>
+                    <button onclick="showFrame('landingFrame')" class="w-[10rem] bg-blue-500 text-lg hover:bg-blue-600 hover:w-[12rem] hover:px-6 hover:py-6 hover:text-2xl text-white font-bold py-4 px-4 rounded transition-all">Back</button>
+                </div>
+                <div>
+                    <img src="hero.png" class="h-[35rem] px-20" />
+                </div>
+            </div>
+
+            <div id="scenesFrame" class="frame flex justify-between h-[80vh] items-center"></div>
+            <div id="townFrame" class="frame flex justify-between h-[80vh] items-center"></div>
+            <div id="settingsFrame" class="frame"></div>
+            
+            <button id="deployScreensButton" onclick="deployScreens()" class="bg-green-500 text-white font-bold py-2 px-4 rounded">
+                Deploy Screens
+            </button>
         </div>
 
         <script src="scripts.js"></script>

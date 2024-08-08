@@ -1,10 +1,18 @@
+@font-face {
+    font-family: 'accidental';
+    src: url('fonts/accidental.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
-    font-family: poppins;
+    font-family: accidental;
     display: flex;
     flex-direction: row;
     overflow: hidden;
     height: 100vh;
     margin: 0;
+    background-color: #101929;
 }
 
 #leftScreen, #middleScreen, #rightScreen {
@@ -13,14 +21,18 @@ body{
     overflow: hidden;
 }
 
-#leftScreen {
-    background-color: #f0f0f0; /* Customize as needed */
+#fullscreenButton, #deployScreensButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#middleScreen {
-    background-color: #ffffff; /* Customize as needed */
-}
-
-#rightScreen {
-    background-color: #f0f0f0; /* Customize as needed */
+#deployScreensButton {
+    right: 150px;
 }

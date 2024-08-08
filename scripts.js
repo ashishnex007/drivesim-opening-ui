@@ -1,3 +1,15 @@
+let leftWindow, rightWindow;
+
+function deployScreens() {
+    leftWindow = window.open('left.html', 'leftScreen', 'width=800,height=600');
+    rightWindow = window.open('right.html', 'rightScreen', 'width=800,height=600');
+    
+    // Request full screen for all windows
+    requestFullScreen(document.documentElement);
+    leftWindow.addEventListener('load', () => requestFullScreen(leftWindow.document.documentElement));
+    rightWindow.addEventListener('load', () => requestFullScreen(rightWindow.document.documentElement));
+}
+
 // Function to request full screen mode
 function requestFullScreen(element) {
     if (element.requestFullscreen) {
@@ -11,16 +23,15 @@ function requestFullScreen(element) {
     }
 }
 
-// Initialize the full screen button
-document.getElementById('fullscreenButton').addEventListener('click', function() {
-    const body = document.body;
-    requestFullScreen(body);
-});
-
 function showFrame(frameId) {
     const frames = document.querySelectorAll('.frame');
     frames.forEach(frame => frame.style.display = 'none');
     document.getElementById(frameId).style.display = 'flex';
+
+    // Send message to right screen
+    if (rightWindow) {
+        rightWindow.postMessage({ type: 'updateInfo', content: `Showing ${frameId}` }, '*');
+    }
 }
 
 function closeApp() {
@@ -61,6 +72,10 @@ function openScenesPage(level) {
     heroImage.src = 'hero.png';
     heroImage.className = 'h-[35rem] px-20';
     scenesFrame.appendChild(heroImage);
+
+    if (rightWindow) {
+        rightWindow.postMessage({ type: 'updateInfo', content: `Choosing ${level} difficulty` }, '*');
+    }
 }
 
 function openTownPage(level, scene) {
@@ -91,16 +106,24 @@ function openTownPage(level, scene) {
     heroImage.src = 'hero.png';
     heroImage.className = 'h-[35rem] px-20';
     townFrame.appendChild(heroImage);
+
+    if (rightWindow) {
+        rightWindow.postMessage({ type: 'updateInfo', content: `Choosing ${scene} in ${level} difficulty` }, '*');
+    }
 }
 
 function openTerminals(level, scene, town) {
-    fetch('run_script.php', {
+    fetch('PHP/run_script.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ level, scene, town })
     })
     .then(response => response.text())
-    .then(data => console.log(data));  // You can also show this data in the UI if needed
+    .then(data => console.log(data));  
+
+    if (rightWindow) {
+        rightWindow.postMessage({ type: 'updateInfo', content: `Opening ${town} in ${scene} (${level} difficulty)` }, '*');
+    }
 }
 
 // Initially show the landing frame
