@@ -1,14 +1,16 @@
 let leftWindow, rightWindow;
 
 function deployScreens() {
-    leftWindow = window.open('left.html', 'leftScreen', 'width=800,height=600');
-    rightWindow = window.open('right.html', 'rightScreen', 'width=800,height=600');
+    leftWindow = window.open('left.html', 'leftScreen', 'width=1920,height=1080,left=0,top=0',);
+    rightWindow = window.open('right.html', 'rightScreen', 'width=1920,height=1080,left=0,top=0');
     
     // Request full screen for all windows
     requestFullScreen(document.documentElement);
     leftWindow.addEventListener('load', () => requestFullScreen(leftWindow.document.documentElement));
     rightWindow.addEventListener('load', () => requestFullScreen(rightWindow.document.documentElement));
 }
+
+deployScreens();
 
 // Function to request full screen mode
 function requestFullScreen(element) {
